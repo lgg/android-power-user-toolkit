@@ -73,7 +73,8 @@
 | **YouTube ReVanced / ReVanced Manager** | Open-source платформа для патчинга Android-приложений. Чаще всего используется для сборки кастомизированного YouTube-клиента с нужными патчами. Лучше использовать официальный Manager и патчить совместимый APK самостоятельно, а не скачивать случайные pre-patched APK. | [GitHub](https://github.com/ReVanced/revanced-manager) · [Официальный сайт](https://revanced.app/) | [Официальная загрузка](https://revanced.app/download) · [GitHub Releases](https://github.com/ReVanced/revanced-manager/releases/latest) |
 | **ReVanced GmsCore** | Форк microG от ReVanced для **non-root пропатченных Google-приложений**. Он рассчитан на работу рядом с обычными Google Play Services и нужен именно тогда, когда ReVanced-патч явно требует “GmsCore support”. | [GitHub](https://github.com/ReVanced/GmsCore) | [GitHub Releases](https://github.com/ReVanced/GmsCore/releases/latest) |
 | **microG Services (upstream)** | Свободная open-source замена реализации Google Play Services API — в первую очередь для ROM/устройств, где обычные Google Play Services отсутствуют или намеренно не используются. **Это не то же самое, что ReVanced GmsCore.** | [GitHub](https://github.com/microg/GmsCore) · [Официальный сайт](https://microg.org/) | [Официальная инструкция загрузки](https://github.com/microg/GmsCore/wiki/Downloads) · [GitHub Releases](https://github.com/microg/GmsCore/releases/latest) |
-| **AirMusic** | Передаёт звук почти из любого Android-приложения на AirPlay/AirPlay 2, Sonos, Chromecast, DLNA, HEOS, Roku, Fire TV и другие receivers по локальной сети. Особенно полезно, когда Android штатно не умеет выводить звук в нужную экосистему колонок. Само Android-приложение не публикуется как open source; отдельно есть официальный Magisk-модуль для опционального root-захвата аудио. | [Официальный сайт](https://www.airmusic.app/) · [официальный Magisk-модуль](https://github.com/Magisk-Modules-Repo/airmusic) | [Google Play — Pro](https://play.google.com/store/apps/details?id=app.airmusic.pro) |
+| **AirMusic Pro** | Полная платная версия AirMusic. Передаёт звук почти из любого Android-приложения на AirPlay/AirPlay 2, Sonos, Chromecast, DLNA, HEOS, Roku, Fire TV и другие receivers по локальной сети. Это **разовая покупка**, без отдельного аккаунта AirMusic и без подписки. Само Android-приложение не публикуется как open source; отдельно есть официальный Magisk-модуль для опционального root-захвата аудио. | [Официальный сайт](https://www.airmusic.app/) · [официальный Magisk-модуль](https://github.com/Magisk-Modules-Repo/airmusic) | [Google Play — Pro](https://play.google.com/store/apps/details?id=app.airmusic.pro) |
+| **AirMusic Trial** | Бесплатная trial-версия, чтобы **до покупки Pro** проверить совместимость AirMusic с конкретным телефоном, приложениями и колонками/ресиверами. По назначению это тот же стриминг, но после 10 минут воспроизведения в звук добавляются тестовые сигналы; после перезапуска AirMusic начинается новый 10-минутный тестовый период. | [Официальный сайт](https://www.airmusic.app/) | [Google Play — Trial](https://play.google.com/store/apps/details?id=app.airmusic.trial) |
 | **AudioRelay** | Передаёт звук ПК на Android, позволяет использовать Android-телефон как микрофон для ПК или отправлять Android-аудио на другое устройство. Работает по Wi-Fi и USB и удобен для самодельной low-latency аудиомаршрутизации. | [Официальный сайт](https://audiorelay.net/) | [Google Play](https://play.google.com/store/apps/details?id=com.azefsw.audioconnect) · [Desktop downloads](https://audiorelay.net/downloads) |
 
 ## NFC и RFID
@@ -117,6 +118,18 @@
 - Не скачивайте случайные APK mirrors и pre-patched сборки, если проект предоставляет официальный канал распространения.
 - Привилегированные инструменты вроде Shizuku, root-утилит, Android Auto workaround'ов и RFID writers могут менять системное поведение или данные. Сначала читайте upstream-документацию.
 - Некоторые техники зависят от прошивки и версии Android. В гайдах этого репозитория отдельно указывается железо/ОС, на которых решение реально проверялось.
+
+## Лицензия
+
+Оригинальные тексты, документация, структура и авторская подборка этого репозитория распространяются по лицензии **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)**.
+
+Материалы можно копировать, распространять, переводить, перерабатывать и использовать в производных работах для **некоммерческих** целей при сохранении корректной атрибуции и указании внесённых изменений. Практичный формат атрибуции:
+
+> Android Power User Toolkit by **lgg** — https://github.com/lgg/android-power-user-toolkit — CC BY-NC 4.0
+
+Названия сторонних приложений, товарные знаки, логотипы, скриншоты, исходный код по внешним ссылкам и другие сторонние материалы остаются под лицензиями и правами их владельцев.
+
+Подробнее: [LICENSE](LICENSE).
 
 ## Как внести вклад
 
