@@ -4,6 +4,8 @@
 
 A curated collection of Android tools, apps, fixes, workarounds, and practical step-by-step guides for power users.
 
+> Last manually audited: **2026-10-01**
+
 The goal is simple: document useful Android software that solves real, often oddly specific problems — especially the kind of tools that can take hours of forum, GitHub, Reddit, and search-engine digging to discover.
 
 This repository contains both:
@@ -62,7 +64,7 @@ See the [full Android-to-Android wireless secondary display guide](guides/androi
 
 ### Fermata Auto note
 
-Modern Android Auto versions heavily restrict sideloaded apps. The Fermata project documents additional requirements/workarounds for recent Android versions, including root-based methods or compatible wireless adapters. Check the project's current documentation before assuming the Android Auto component will appear automatically.
+Android Auto behavior for sideloaded/non-standard apps is **version-sensitive**. Fermata's releases and issue tracker document compatibility changes as Android Auto evolves, so check the project's current release notes/issues before assuming Fermata Auto or Fermata Mirror will appear and work on your Android Auto version.
 
 ## Media, audio & streaming
 
