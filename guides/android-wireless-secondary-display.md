@@ -16,7 +16,7 @@ This is the setup we arrived at after testing several Android multi-display appr
 
 ## Tested setup
 
-The complete workflow was verified on:
+The complete workflow was verified on **2026-10-01** with:
 
 - **Host:** Lenovo Xiaoxin Pad Pro 12.7 (2025)
 - **Model:** TB375FC
@@ -24,6 +24,8 @@ The complete workflow was verified on:
 - **OS:** Android 15
 - **Firmware:** ZUXOS 1.1.04.287
 - **Vendor desktop mode:** Lenovo PC Mode
+- **MagicDesk:** 1.13 (build 214)
+- **Working Shizuku version after troubleshooting:** 13.5.4
 - **Receiver:** Android phone running Moonlight
 
 It should not be treated as Lenovo-only. The core mechanism uses standard Android virtual-display/task APIs through Shizuku and should be useful on other compatible Android devices as well. OEM firmware can still change multi-display behavior, so some devices may need additional troubleshooting.
@@ -33,7 +35,7 @@ It should not be treated as Lenovo-only. The core mechanism uses standard Androi
 | App | Role |
 | --- | --- |
 | [Shizuku](https://github.com/RikkaApps/Shizuku) | Provides privileged Android system API access without requiring full root. |
-| [Mirror](https://github.com/jqssun/android-display-mirror) | Creates the virtual display and exposes it through a built-in Sunshine server. |
+| [Mirror](https://github.com/jqssun/android-display-mirror) | Creates the virtual display and exposes it through a built-in Sunshine server. Display creation/streaming can work without Shizuku, but **remote input requires Shizuku**. |
 | [Extend](https://github.com/jqssun/android-display-extend) | Optional but useful display manager for resolution/DPI, app placement and input/display controls. |
 | [Moonlight](https://github.com/moonlight-stream/moonlight-android) | Runs on the second Android device and displays/controls the Sunshine stream. |
 | [MagicDesk](https://github.com/mekhontsev/magicdesk) | Moves **already-running Android tasks** from one display to another. This is the important workaround for OEM desktop modes that intercept normal app launches. |
@@ -52,7 +54,7 @@ For the exact workflow below:
 
 - host device running **Android 14+** for current MagicDesk builds;
 - Developer Options enabled;
-- Shizuku started through Wireless Debugging, USB debugging or root;
+- Shizuku started through Wireless Debugging, USB debugging or root **if you want remote input and the MagicDesk task-moving workflow**;
 - host and receiver on the same local network for the easiest Moonlight setup;
 - Moonlight installed on the receiver;
 - Mirror, Extend and MagicDesk installed on the host.
@@ -85,7 +87,7 @@ On Android 11+ the easiest non-root method is usually Wireless Debugging:
 5. Start Shizuku.
 6. Confirm that Shizuku reports that the service is running.
 
-Authorize Mirror, Extend and MagicDesk when they request Shizuku access.
+Authorize Mirror, Extend and MagicDesk when they request Shizuku access. Mirror can create/stream a virtual display without Shizuku, but its upstream documentation states that **remote input requires Shizuku**; MagicDesk also needs privileged access for global running-task queries and task transfers.
 
 ## Step 2 — Create the virtual display in Mirror
 
