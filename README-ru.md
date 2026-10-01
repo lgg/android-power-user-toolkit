@@ -51,14 +51,14 @@
 | --- | --- | --- | --- |
 | **RKNHardering** | Проверяет Android-устройство на признаки, по которым приложения могут обнаружить VPN/proxy: интерфейсы, маршруты, DNS, несовпадения публичного IP, локальные proxy, установленные VPN-приложения и другие сигналы. Полезен, чтобы понять, что другое приложение потенциально может узнать о вашем сетевом окружении. | [GitHub](https://github.com/xtclovver/RKNHardering) | [GitHub Releases](https://github.com/xtclovver/RKNHardering/releases/latest) · [F-Droid](https://f-droid.org/packages/com.notcvnt.rknhardering/) |
 
-> RKNHardering — это **диагностический инструмент**, а не VPN и не гарантия того, что конфигурация «не детектируется».
+> RKNHardering — это **диагностический инструмент**, а не VPN и не гарантия того, что конфигурация «не детектируется». Проект отдельно маркирует подтверждённые проверки и сведения из сообщества/исследований, поэтому не стоит воспринимать каждый сигнал как безусловный факт без чтения upstream-документации.
 
 ## Android Auto и автомобильные head units
 
 | Инструмент | Для чего нужен | Исходники / официальный сайт | Установка |
 | --- | --- | --- | --- |
 | **Fermata Auto / Fermata Media Player** | Open-source медиаплеер с аудио, видео, IPTV, плейлистами и поддержкой Android Auto. Полезен, если возможностей штатных Android Auto media apps недостаточно. | [GitHub](https://github.com/AndreyPavlenko/Fermata) | [GitHub Releases](https://github.com/AndreyPavlenko/Fermata/releases/latest) |
-| **Headunit Reloaded (HUR)** | Превращает Android-планшет или магнитолу в **Android Auto receiver/emulator** и поддерживает USB/беспроводные режимы подключения. Полезен для DIY head unit и планшета в автомобиле. | [Legacy/open-source проект](https://github.com/borconi/headunit) · текущая версия поддерживается AAWireless | [Google Play](https://play.google.com/store/apps/details?id=gb.xxy.hr) |
+| **Headunit Reloaded (HUR)** | Превращает Android-планшет или магнитолу в **Android Auto receiver/emulator**. Полезен для DIY head unit и планшета в автомобиле. Актуальное поведение USB/беспроводного подключения зависит от версии Android Auto и конкретного устройства — проверяйте текущие release notes в Google Play. | [Исторические GPL-исходники](https://github.com/borconi/headunit) *(legacy-код; не стоит считать его исходниками текущей Play-сборки)* · [официальная support-тема](https://forum.xda-developers.com/t/android-4-1-headunit-reloaded-for-android-auto-with-wifi.3432348/) | [Google Play](https://play.google.com/store/apps/details?id=gb.xxy.hr) |
 
 ### Примечание по Fermata Auto
 
@@ -69,8 +69,9 @@
 | Инструмент | Для чего нужен | Исходники / официальный сайт | Установка |
 | --- | --- | --- | --- |
 | **YouTube ReVanced / ReVanced Manager** | Open-source платформа для патчинга Android-приложений. Чаще всего используется для сборки кастомизированного YouTube-клиента с нужными патчами. Лучше использовать официальный Manager и патчить совместимый APK самостоятельно, а не скачивать случайные pre-patched APK. | [GitHub](https://github.com/ReVanced/revanced-manager) · [Официальный сайт](https://revanced.app/) | [Официальная загрузка](https://revanced.app/download) · [GitHub Releases](https://github.com/ReVanced/revanced-manager/releases/latest) |
-| **microG Services** | Свободная open-source реализация Google Play Services API для Android-систем и приложений, которым нужна совместимость с Google services без стандартного проприетарного Play Services пакета. | [GitHub](https://github.com/microg/GmsCore) · [Официальный сайт](https://microg.org/) | [Официальная инструкция загрузки](https://github.com/microg/GmsCore/wiki/Downloads) · [GitHub Releases](https://github.com/microg/GmsCore/releases/latest) |
-| **AirMusic** | Передаёт звук почти из любого Android-приложения на AirPlay/AirPlay 2, Sonos, Chromecast, DLNA, HEOS, Roku, Fire TV и другие receivers по локальной сети. Особенно полезно, когда Android штатно не умеет выводить звук в нужную экосистему колонок. | [Официальный сайт](https://www.airmusic.app/) | [Google Play — Pro](https://play.google.com/store/apps/details?id=app.airmusic.pro) |
+| **ReVanced GmsCore** | Форк microG от ReVanced для **non-root пропатченных Google-приложений**. Он рассчитан на работу рядом с обычными Google Play Services и нужен именно тогда, когда ReVanced-патч явно требует “GmsCore support”. | [GitHub](https://github.com/ReVanced/GmsCore) | [GitHub Releases](https://github.com/ReVanced/GmsCore/releases/latest) |
+| **microG Services (upstream)** | Свободная open-source замена реализации Google Play Services API — в первую очередь для ROM/устройств, где обычные Google Play Services отсутствуют или намеренно не используются. **Это не то же самое, что ReVanced GmsCore.** | [GitHub](https://github.com/microg/GmsCore) · [Официальный сайт](https://microg.org/) | [Официальная инструкция загрузки](https://github.com/microg/GmsCore/wiki/Downloads) · [GitHub Releases](https://github.com/microg/GmsCore/releases/latest) |
+| **AirMusic** | Передаёт звук почти из любого Android-приложения на AirPlay/AirPlay 2, Sonos, Chromecast, DLNA, HEOS, Roku, Fire TV и другие receivers по локальной сети. Особенно полезно, когда Android штатно не умеет выводить звук в нужную экосистему колонок. Само Android-приложение не публикуется как open source; отдельно есть официальный Magisk-модуль для опционального root-захвата аудио. | [Официальный сайт](https://www.airmusic.app/) · [официальный Magisk-модуль](https://github.com/Magisk-Modules-Repo/airmusic) | [Google Play — Pro](https://play.google.com/store/apps/details?id=app.airmusic.pro) |
 | **AudioRelay** | Передаёт звук ПК на Android, позволяет использовать Android-телефон как микрофон для ПК или отправлять Android-аудио на другое устройство. Работает по Wi-Fi и USB и удобен для самодельной low-latency аудиомаршрутизации. | [Официальный сайт](https://audiorelay.net/) | [Google Play](https://play.google.com/store/apps/details?id=com.azefsw.audioconnect) · [Desktop downloads](https://audiorelay.net/downloads) |
 
 ## NFC и RFID
@@ -79,7 +80,7 @@
 
 | Инструмент | Для чего нужен | Исходники / официальный сайт | Установка |
 | --- | --- | --- | --- |
-| **MIFARE Classic Tool (MCT)** | Низкоуровневая Android NFC-утилита для чтения, записи, анализа, ключей и дампов **MIFARE Classic** меток. Очень полезна для исследования совместимых карт и тегов. | [GitHub](https://github.com/ikarus23/MifareClassicTool) | [Google Play](https://play.google.com/store/apps/details?id=de.syss.MifareClassicTool) · [GitHub Releases](https://github.com/ikarus23/MifareClassicTool/releases) |
+| **MIFARE Classic Tool (MCT)** | Низкоуровневая Android NFC-утилита для чтения, записи, анализа, ключей и дампов **MIFARE Classic** меток. Очень полезна для исследования совместимых карт и тегов. | [GitHub](https://github.com/ikarus23/MifareClassicTool) | [Google Play](https://play.google.com/store/apps/details?id=de.syss.MifareClassicTool) · [F-Droid](https://f-droid.org/packages/de.syss.MifareClassicTool/) · [официальный APK](https://www.icaria.de/mct/releases/) |
 | **RFID Tools (RRG)** | Android frontend/toolkit для внешнего RFID/NFC-железа, включая Proxmark3 RDV4, ACR122U, Chameleon Mini и устройства класса PN532. | [GitHub](https://github.com/RfidResearchGroup/RFIDtools) | [Google Play](https://play.google.com/store/apps/details?id=com.rfidresearchgroup.rfidtools) · [GitHub Releases](https://github.com/RfidResearchGroup/RFIDtools/releases) |
 | **NFC Tools** | Удобный general-purpose NFC reader/writer для NDEF-тегов и автоматизаций через NFC. Лучше подходит для обычных NFC-меток, чем для low-level MIFARE-исследований. | [Официальный сайт](https://www.wakdev.com/en/apps/nfc-tools-android.html) | [Google Play](https://play.google.com/store/apps/details?id=com.wakdev.wdnfc) |
 | **NFC TagInfo by NXP** | Диагностическая утилита от NXP для определения типа NFC/RFID-тега и просмотра доступной информации о карте/метке. Отличный первый шаг, когда вы ещё не знаете, с каким типом тега имеете дело. | [NXP](https://www.nxp.com/) | [Google Play](https://play.google.com/store/apps/details?id=com.nxp.taginfolite) |
@@ -101,6 +102,12 @@
 - открывает полезные системные функции, обычно скрытые от пользователя;
 - соединяет Android с ПК, автомобилем, аудиосистемой, дисплеями, NFC/RFID-железом или другими устройствами;
 - очень полезен, но его трудно найти, если заранее не знаешь точное название.
+
+## Зависимость от версий
+
+- **Shizuku:** на части устройств/ROM есть репорты о регрессиях UserService в 13.6.0. На нашем MediaTek-девайсе сам Shizuku работал, Mirror/Extend тоже, но MagicDesk ловил timeout при UserService binding; откат на 13.5.4 всё исправил. Точные симптомы и upstream issues есть в [гайде по второму экрану](guides/android-wireless-secondary-display-ru.md#проблема-shizuku-1360--mediatek-userservice).
+- **Android Auto:** Google может менять ограничения sideloaded apps и способы подключения стороннего head-unit софта. Поведение Fermata Auto и HUR нужно считать version-dependent и сверять с актуальными upstream notes.
+- **Secondary displays:** Android/OEM-прошивка может переопределять стандартное multi-display поведение. Поддержка функции самим приложением не гарантирует, что конкретный OEM ROM разрешит её использовать.
 
 ## Безопасность и доверие
 
