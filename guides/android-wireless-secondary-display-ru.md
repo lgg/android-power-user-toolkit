@@ -64,6 +64,7 @@ MagicDesk решает другую задачу: он может взять **�
 ### Основной Android-девайс
 
 - Shizuku: https://github.com/RikkaApps/Shizuku/releases
+  - Если на Shizuku 13.6.0 возникает описанный ниже UserService timeout, проверенный fallback: https://github.com/RikkaApps/Shizuku/releases/tag/v13.5.4
 - Mirror: https://github.com/jqssun/android-display-mirror/releases/latest
 - Extend: https://github.com/jqssun/android-display-extend/releases/latest
 - MagicDesk: https://github.com/mekhontsev/magicdesk/releases/latest
@@ -264,9 +265,13 @@ Timed out waiting for privileged service binding
 
 После этого MagicDesk получил shell-доступ, и перенос tasks заработал.
 
-Есть upstream-репорты о проблемах Shizuku UserService на MediaTek:
+На момент нашего теста (**2026-10-01**) Shizuku 13.6.0 был актуальным релизом, и в upstream уже было несколько открытых issue, совпадающих с нашим сценарием:
 
-https://github.com/RikkaApps/Shizuku/issues/1198
+- [#1198 — User services don't work on MediaTek devices](https://github.com/RikkaApps/Shizuku/issues/1198)
+- [#2443 — Shizuku hangs / stops responding to shell commands after Wi-Fi state changes (regression in 13.6.0)](https://github.com/RikkaApps/Shizuku/issues/2443)
+- [#2463 — Had to downgrade from 13.6.0 to 13.5.4 after encountering problems](https://github.com/RikkaApps/Shizuku/issues/2463)
+
+В issue #2463 отдельно описан странный симптом, когда приложение **13.6.0 продолжает показывать “Version 13.5, adb”**. На нашем Lenovo перед откатом мы наблюдали тот же рассинхрон.
 
 ### Рекомендация
 
@@ -280,9 +285,9 @@ https://github.com/RikkaApps/Shizuku/issues/1198
 - Diagnostics показывает timeout при privileged service binding;
 - особенно если устройство на MediaTek;
 
-то проверка Shizuku 13.5.4 — очень логичный troubleshooting step.
+то проверка официального релиза [Shizuku 13.5.4](https://github.com/RikkaApps/Shizuku/releases/tag/v13.5.4) — очень логичный troubleshooting step.
 
-В будущих версиях Shizuku эта регрессия может быть исправлена.
+Поскольку проблема зависит от версии и прошивки, не стоит откатываться без совпадающих симптомов. В будущих версиях Shizuku регрессия может быть исправлена — сначала проверяйте актуальные upstream issues и release notes.
 
 ## Troubleshooting
 
