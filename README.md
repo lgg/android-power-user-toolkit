@@ -73,7 +73,8 @@ Android Auto behavior for sideloaded/non-standard apps is **version-sensitive**.
 | **YouTube ReVanced / ReVanced Manager** | Open-source patching platform for Android apps. Commonly used to build a customized YouTube client with selected patches. Use the official Manager and patch your own supported APK rather than downloading random pre-patched APKs. | [GitHub](https://github.com/ReVanced/revanced-manager) · [Official site](https://revanced.app/) | [Official download](https://revanced.app/download) · [GitHub Releases](https://github.com/ReVanced/revanced-manager/releases/latest) |
 | **ReVanced GmsCore** | ReVanced's microG fork for **non-root patched Google apps**. It is designed to coexist with normal Google Play Services and is the relevant GmsCore package when a ReVanced patch explicitly requires “GmsCore support”. | [GitHub](https://github.com/ReVanced/GmsCore) | [GitHub Releases](https://github.com/ReVanced/GmsCore/releases/latest) |
 | **microG Services (upstream)** | Free/open-source replacement implementation of Google Play Services APIs, mainly for ROMs/devices where regular Google Play Services are unavailable or intentionally not used. **Different purpose from ReVanced GmsCore.** | [GitHub](https://github.com/microg/GmsCore) · [Official site](https://microg.org/) | [Official download docs](https://github.com/microg/GmsCore/wiki/Downloads) · [GitHub Releases](https://github.com/microg/GmsCore/releases/latest) |
-| **AirMusic** | Streams audio from almost any Android app to AirPlay/AirPlay 2, Sonos, Chromecast, DLNA, HEOS, Roku, Fire TV and other receivers over the local network. Handy when Android cannot natively output to the speaker ecosystem you use. The Android app itself is not published as open source; an official Magisk module exists for optional root-based audio capture. | [Official site](https://www.airmusic.app/) · [official Magisk module](https://github.com/Magisk-Modules-Repo/airmusic) | [Google Play — Pro](https://play.google.com/store/apps/details?id=app.airmusic.pro) |
+| **AirMusic Pro** | Full paid version of AirMusic. Streams audio from almost any Android app to AirPlay/AirPlay 2, Sonos, Chromecast, DLNA, HEOS, Roku, Fire TV and other receivers over the local network. It is a **one-time purchase**, with no AirMusic account or subscription required. The Android app itself is not published as open source; an official Magisk module exists for optional root-based audio capture. | [Official site](https://www.airmusic.app/) · [official Magisk module](https://github.com/Magisk-Modules-Repo/airmusic) | [Google Play — Pro](https://play.google.com/store/apps/details?id=app.airmusic.pro) |
+| **AirMusic Trial** | Free trial for checking whether AirMusic works with your exact Android apps, phone and receivers **before buying Pro**. It has the same basic streaming purpose, but after 10 minutes of playback it adds test signals; restarting AirMusic starts another 10-minute test period. | [Official site](https://www.airmusic.app/) | [Google Play — Trial](https://play.google.com/store/apps/details?id=app.airmusic.trial) |
 | **AudioRelay** | Streams PC audio to Android, uses an Android phone as a PC microphone, or sends Android audio to another device. Supports Wi-Fi and USB and is useful for low-latency improvised audio routing. | [Official site](https://audiorelay.net/) | [Google Play](https://play.google.com/store/apps/details?id=com.azefsw.audioconnect) · [Desktop downloads](https://audiorelay.net/downloads) |
 
 ## NFC & RFID
@@ -117,6 +118,18 @@ This is not intended to be a dump of every Android app. A tool belongs here when
 - Avoid random APK mirrors and pre-patched packages when the original project provides a trusted distribution channel.
 - Privileged tools such as Shizuku, root utilities, Android Auto workarounds and RFID writers can change system behavior or data. Read the upstream documentation first.
 - Some techniques are firmware- and Android-version-dependent. Guides in this repository state the hardware/OS on which they were actually tested.
+
+## License
+
+The original editorial content, documentation, structure, and curation in this repository are licensed under the **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)** license.
+
+You may copy, share, remix, translate, and adapt this repository for **non-commercial** purposes as long as you provide appropriate attribution and indicate changes. A practical attribution format is:
+
+> Android Power User Toolkit by **lgg** — https://github.com/lgg/android-power-user-toolkit — CC BY-NC 4.0
+
+Third-party app names, trademarks, logos, screenshots, linked source code, and other third-party material remain subject to their respective owners' licenses and rights.
+
+See [LICENSE](LICENSE) for details.
 
 ## Contributing
 
