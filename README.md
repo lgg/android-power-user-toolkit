@@ -69,17 +69,22 @@ See the [full Android-to-Android wireless secondary display guide](guides/androi
 
 ## Network, VPN, proxy & censorship tools
 
-> Android normally allows only one active `VpnService`-based tunnel at a time. Many of the clients below therefore compete for the same Android VPN slot even when they are technically proxy clients rather than commercial VPN services.
+### Recommended picks
+
+- **⭐ v2RayTun** — recommended general-purpose Android client when you already have your own proxy/VPN subscription or server configuration. It supports common Xray/V2Ray-style protocols and imports configs/subscriptions.
+- **⭐ ByeByeDPI** — recommended local DPI/censorship-bypass tool when the problem is ISP filtering rather than the need for a remote VPN endpoint. **It is not a remote VPN service** and does not hide your public IP by itself.
+
+> Android normally allows only one active `VpnService`-based tunnel at a time. Many of the clients below therefore compete for the same Android VPN slot even when they are technically proxy clients rather than commercial VPN services. When combining tools, check whether one of them can run in proxy mode instead of `VpnService` mode.
 
 ### Proxy, VPN & tunneling clients
 
 | Tool | What it is useful for | Source / official site | Install |
 | --- | --- | --- | --- |
-| **v2RayTun** | Cross-platform Xray-based proxy client for importing your own configs/subscriptions. Supports modern V2Ray/Xray-style protocols; it does **not** sell/provide VPN servers itself. | [Official GitHub (roadmap/releases)](https://github.com/LXST-CODE/v2RayTun) · [Official site](https://v2raytun.com/) | [Google Play](https://play.google.com/store/apps/details?id=com.v2raytun.android) · [GitHub Releases](https://github.com/LXST-CODE/v2RayTun/releases) |
-| **sing-box (SFA)** | Official Android client for the universal sing-box proxy platform. Handles local/remote profiles and TUN transparent proxying through Android `VpnService`; excellent when you want a flexible low-level multi-protocol client. | [Android source](https://github.com/SagerNet/sing-box-for-android) · [core](https://github.com/SagerNet/sing-box) · [Docs](https://sing-box.sagernet.org/installation/clients/sfa/) | [Google Play](https://play.google.com/store/apps/details?id=io.nekohasekai.sfa) · [GitHub Releases](https://github.com/SagerNet/sing-box/releases) |
+| **⭐ Recommended — v2RayTun** | Cross-platform Xray-based proxy client for importing your own configs/subscriptions. Supports modern V2Ray/Xray-style protocols; it does **not** sell/provide VPN servers itself. | [Official GitHub (roadmap/releases)](https://github.com/LXST-CODE/v2RayTun) · [Official site](https://v2raytun.com/) | [Google Play](https://play.google.com/store/apps/details?id=com.v2raytun.android) · [GitHub Releases](https://github.com/LXST-CODE/v2RayTun/releases) |
+| **sing-box (SFA)** | Official Android client for the universal sing-box proxy platform. Handles local/remote profiles and TUN transparent proxying through Android `VpnService`; excellent when you want a flexible low-level multi-protocol client. | [Android source](https://github.com/SagerNet/sing-box-for-android) · [core](https://github.com/SagerNet/sing-box) · [Docs](https://sing-box.sagernet.org/clients/android/) | [Google Play](https://play.google.com/store/apps/details?id=io.nekohasekai.sfa) · [F-Droid](https://f-droid.org/packages/io.nekohasekai.sfa/) · [GitHub Releases](https://github.com/SagerNet/sing-box/releases) |
 | **V2rayGG** | Privacy-focused V2RayNG-style client with VLESS, VMess, Shadowsocks and advanced routing/profile support. The Play listing describes it as open source, but its advertised source URL is currently unavailable (audited 2026-10-01), so no unofficial replacement repo is linked here. | Source advertised by the Play listing is currently unavailable | [Google Play](https://play.google.com/store/apps/details?id=com.github.v2raygg) |
 | **Shadowrocket for Android (Cross Ltd.)** | Android proxy/VPN client with built-in nodes plus VMess, VLESS, Trojan, Shadowsocks, Hysteria2, WireGuard, SOCKS/HTTP and subscription import. **Do not confuse it with the unrelated original iOS Shadowrocket app.** | Closed source; no verified public source repository found | [Google Play](https://play.google.com/store/apps/details?id=com.v2cross.proxy) |
-| **Tailscale** | Open-source Android client for a WireGuard-based identity-aware mesh/overlay network. Best for securely reaching your own devices, homelab and private networks rather than as a generic V2Ray-style subscription client. | [GitHub](https://github.com/tailscale/tailscale-android) · [Official site](https://tailscale.com/) | [Google Play](https://play.google.com/store/apps/details?id=com.tailscale.ipn) |
+| **Tailscale** | Open-source Android client for a WireGuard-based identity-aware mesh/overlay network. Best for securely reaching your own devices, homelab and private networks rather than as a generic V2Ray-style subscription client. | [GitHub](https://github.com/tailscale/tailscale-android) · [Official site](https://tailscale.com/) | [Google Play](https://play.google.com/store/apps/details?id=com.tailscale.ipn) · [Official APK packages](https://pkgs.tailscale.com/stable/#android) |
 | **V2BOX** | Multi-protocol proxy client supporting VLESS/VMess, Shadowsocks, Trojan, SSH, Hysteria/Hysteria2, Reality and subscription imports. Closed-source client distributed by HexaSoftware. | [Developer site](https://hexasoftware.dev/) | [Google Play](https://play.google.com/store/apps/details?id=dev.hexasoftware.v2box) |
 | **V2Ray Client+ (V2ray VPN Client: Xray Vless)** | Lightweight V2Ray/Xray client focused on VLESS Reality / XTLS RPRX Vision with `vless://` and QR import. Useful when you want a simple VLESS-focused client rather than a huge configuration UI. | Closed source; no verified public source repository found | [Google Play](https://play.google.com/store/apps/details?id=com.v2ray.client) |
 | **Happ — Proxy Utility** | Xray-core proxy client with routing and VLESS Reality, VMess, Trojan, Shadowsocks, SOCKS and Hysteria2. The project explicitly does not provide servers; bring your own config/subscription. | [GitHub](https://github.com/Happ-proxy/happ-android) · [Official site](https://happ.su/) | [Google Play](https://play.google.com/store/apps/details?id=com.happproxy) · [GitHub APK](https://github.com/Happ-proxy/happ-android/releases/latest) |
@@ -90,7 +95,7 @@ See the [full Android-to-Android wireless secondary display guide](guides/androi
 
 | Tool | What it is useful for | Source / official site | Install |
 | --- | --- | --- | --- |
-| **ByeByeDPI / ByeDPI for Android** | Runs ByeDPI locally and routes traffic through it to work around some DPI-based filtering. It uses Android's VPN interface for local traffic redirection but is **not a remote VPN service**: it does not encrypt traffic by itself or hide your public IP. Works without root. | [Current project](https://github.com/romanvht/ByeByeDPI) · [original implementation](https://github.com/dovecoteescapee/ByeDPIAndroid) · [Official site](https://byebyedpi.xyz/) | [GitHub Releases](https://github.com/romanvht/ByeByeDPI/releases/latest) |
+| **⭐ Recommended — ByeByeDPI / ByeDPI for Android** | Runs ByeDPI locally and routes traffic through it to work around some DPI-based filtering. It uses Android's VPN interface for local traffic redirection but is **not a remote VPN service**: it does not encrypt traffic by itself or hide your public IP. Works without root and supports split tunneling. | [Current project](https://github.com/romanvht/ByeByeDPI) · [original implementation](https://github.com/dovecoteescapee/ByeDPIAndroid) · [Official site](https://byebyedpi.xyz/) | [GitHub Releases](https://github.com/romanvht/ByeByeDPI/releases/latest) |
 
 ### VPN / proxy diagnostics
 
@@ -150,6 +155,17 @@ Only use RFID/NFC read/write tools on cards, tags and systems you own or are exp
 | Tool | What it is useful for | Source / official site | Install |
 | --- | --- | --- | --- |
 | **Lichess** | Fully free/libre open-source chess platform with online play, puzzles, analysis, studies, tournaments and Stockfish. A strong no-subscription alternative for people who do not need Chess.com's paid ecosystem. | [GitHub](https://github.com/lichess-org/mobile) · [Official site](https://lichess.org/) | [Google Play](https://play.google.com/store/apps/details?id=org.lichess.mobileV2) |
+
+## Community knowledge bases
+
+Official project documentation should be the first source for downloads and security-sensitive setup, but many Android edge cases are documented much better by the community.
+
+- **[4PDA forum](https://4pda.to/forum/)** — especially useful for Russian-language device-specific threads, firmware quirks, Android Auto, head units, root/Shizuku, networking and obscure Android utilities.
+- **[XDA Forums](https://xdaforums.com/)** — one of the strongest English-language sources for ROM/device-specific guides, bootloader/root topics, Android Auto, ADB, system tweaks and troubleshooting.
+
+A useful search pattern is: **exact app/tool name + device model + Android/firmware version + the symptom**.
+
+> Treat forum attachments, modified APKs and old instructions as untrusted until verified. Prefer upstream GitHub/official releases for installation, and use 4PDA/XDA mainly to discover device-specific fixes, compatibility notes and troubleshooting paths.
 
 ## How entries are selected
 
