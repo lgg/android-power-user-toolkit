@@ -64,6 +64,7 @@ If you use a VPN on either device, temporarily disable it during initial setup i
 ### Host Android device
 
 - Shizuku: https://github.com/RikkaApps/Shizuku/releases
+  - If you hit the specific UserService timeout described below on Shizuku 13.6.0, tested fallback: https://github.com/RikkaApps/Shizuku/releases/tag/v13.5.4
 - Mirror: https://github.com/jqssun/android-display-mirror/releases/latest
 - Extend: https://github.com/jqssun/android-display-extend/releases/latest
 - MagicDesk: https://github.com/mekhontsev/magicdesk/releases/latest
@@ -264,9 +265,13 @@ immediately fixed MagicDesk's privileged UserService binding after Shizuku and M
 
 After that MagicDesk reported shell access and task moving worked.
 
-There are upstream reports about Shizuku UserService problems on MediaTek devices:
+At the time of this test (**2026-10-01**), Shizuku 13.6.0 was the latest release and there were multiple open upstream reports relevant to this failure mode:
 
-https://github.com/RikkaApps/Shizuku/issues/1198
+- [#1198 — User services don't work on MediaTek devices](https://github.com/RikkaApps/Shizuku/issues/1198)
+- [#2443 — Shizuku hangs / stops responding to shell commands after Wi-Fi state changes (regression in 13.6.0)](https://github.com/RikkaApps/Shizuku/issues/2443)
+- [#2463 — Had to downgrade from 13.6.0 to 13.5.4 after encountering problems](https://github.com/RikkaApps/Shizuku/issues/2463)
+
+Issue #2463 also reports the unusual situation where the **13.6.0 app UI still shows “Version 13.5, adb”**. We observed the same mismatch on the tested Lenovo before downgrading.
 
 ### Recommendation
 
@@ -280,9 +285,9 @@ Start with the current Shizuku release. If all of these are true:
 - Diagnostics show a privileged service binding timeout;
 - especially if the device uses a MediaTek SoC;
 
-then testing Shizuku 13.5.4 is a very worthwhile troubleshooting step.
+then testing the official [Shizuku 13.5.4 release](https://github.com/RikkaApps/Shizuku/releases/tag/v13.5.4) is a very worthwhile troubleshooting step.
 
-Future Shizuku releases may fix the regression.
+Because this is version- and firmware-sensitive, do not downgrade unless the symptoms match. Future Shizuku releases may fix the regression; check the upstream issues and current release notes first.
 
 ## Troubleshooting
 
